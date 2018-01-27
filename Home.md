@@ -1,7 +1,8 @@
 Welcome to the MySQL-With-Node.js wiki!
 
+https://www.youtube.com/watch?v=EN6Dx22cPRI
 
-
+https://github.com/mysqljs/mysql
 
 `{`
   `"name": "myapp",`
