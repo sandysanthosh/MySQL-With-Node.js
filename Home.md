@@ -1,10 +1,12 @@
 Welcome to the MySQL-With-Node.js wiki!
 
+yputube link:
 https://www.youtube.com/watch?v=EN6Dx22cPRI
 
 https://github.com/mysqljs/mysql
 
 `{`
+
   `"name": "myapp",`
   `"version": "1.0.0",`
   `"description": "Simple test app",`
