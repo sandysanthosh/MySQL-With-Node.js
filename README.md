@@ -2,8 +2,8 @@
 Using MySQL With Node.js
 
 
-In this i have worked on how to connect with mysql usinf nodejs
+In this i have worked on how to connect with mysql using nodejs
 
    Nodejs connection with database applications.
-     create,read,update,delete   
+   create,read,update,delete   
     
