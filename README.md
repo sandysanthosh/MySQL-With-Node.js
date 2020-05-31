@@ -1,13 +1,14 @@
 # MySQL Node.js:
 
-Using MySQL With Node.js
+Using MySQL With Node.js :coffee:
 
+https://github.com/mysqljs/mysql
 
-### how to connect with mysql using nodejs:
+### How to connect with mysql using nodejs:
 
 
             Nodejs connection with database applications
-            create,read,update,delete   
+            create,read,update,delete 
 
    
    ### Install in NPM:
@@ -37,17 +38,89 @@ Using MySQL With Node.js
 
          connection.end();
          
- ### Select Query:
+                 
+  ###  Insert.js in Node:
 
-                      connection.query(
-                       'SELECT * FROM `books` WHERE `author` = ?',
-                       'David',
-                       function (error, results, fields) {
-                         // error will be an Error if one occurred during the query
-                         // results will contain the results of the query
-                         // fields will contain information about the returned results fields (if any)
-                       }
-                     );
+            var mysql = require('mysql');  
+            var con = mysql.createConnection({  
+            host: "localhost",  
+            user: "root",  
+            password: "***",  
+            database: "nodejs"  
+            });  
+            con.connect(function(err) {  
+            if (err) throw err;  
+            console.log("Connected!");  
+            var sql = "INSERT INTO employees (id, name, age, city) VALUES ?";  
+            var values = [  
+            ['2', 'Bharat Kumar', '25', 'Mumbai'],  
+            ['3', 'John Cena', '35', 'Las Vegas'],  
+            ['4', 'Ryan Cook', '15', 'CA']  
+            ];  
+            con.query(sql, [values], function (err, result) {  
+            if (err) throw err;  
+            console.log("Number of records inserted: " + result.affectedRows);  
+            });  
+            });       
+            
+            
+ ### Select.js Node:
+
+            var mysql = require('mysql');  
+            var con = mysql.createConnection({  
+            host: "localhost",  
+            user: "root",  
+            password: "***",  
+            database: "nodejs"  
+            });  
+            con.connect(function(err) {  
+            if (err) throw err;  
+            con.query("SELECT * FROM employees", function (err, result) {  
+            if (err) throw err;  
+            console.log(result);  
+            });  
+            });                     
+
+
+### Update.js Node:
+
+            var mysql = require('mysql');  
+            var con = mysql.createConnection({  
+            host: "localhost",  
+            user: "root",  
+            password: "***",  
+            database: "nodejs"  
+            });  
+            con.connect(function(err) {  
+            if (err) throw err;  
+            var sql = "UPDATE employees SET city = 'Delhi' WHERE city = 'Allahabad'";  
+            con.query(sql, function (err, result) {  
+            if (err) throw err;  
+            console.log(result.affectedRows + " record(s) updated");  
+            });  
+            });
+            
+
+### Delete.js in Node:
+
+            var mysql = require('mysql');  
+            var con = mysql.createConnection({  
+            host: "localhost",  
+            user: "root",  
+            password: "***",  
+            database: "nodejs"  
+            });  
+            con.connect(function(err) {  
+            if (err) throw err;  
+            var sql = "DELETE FROM employees WHERE city = 'Delhi'";  
+            con.query(sql, function (err, result) {  
+            if (err) throw err;  
+            console.log("Number of records deleted: " + result.affectedRows);  
+            });  
+            });  
+
+
+                                                                                                
 
 
 
@@ -60,3 +133,4 @@ Using MySQL With Node.js
 
 
 
+            
